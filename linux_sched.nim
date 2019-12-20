@@ -18,23 +18,23 @@ type
 proc sched_getparam(pid: Pid; param: ptr SchedParam): cint {.lib.} =
   result = cint syscall(SchedGetParam, pid, param)
   if result < 0:
-    errno = result
+    errno = -result
     result = -1
 
 proc sched_getscheduler(pid: Pid): cint {.lib.} =
   result = cint syscall(SchedGetScheduler, pid)
   if result < 0:
-    errno = result
+    errno = -result
     result = -1
 
 proc sched_setparam(pid: Pid, param: ptr SchedParam): cint {.lib.} =
   result = cint syscall(SchedSetParam, pid, param)
   if result < 0:
-    errno = result
+    errno = -result
     result = -1
 
 proc sched_setscheduler(pid: Pid, policy: cint, param: ptr SchedParam): cint {.lib.} =
   result = cint syscall(SchedSetScheduler, pid, policy, param)
   if result < 0:
-    errno = result
+    errno = -result
     result = -1
