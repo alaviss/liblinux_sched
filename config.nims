@@ -7,7 +7,10 @@ const
   SoName = "$#.$#" % [Libname, $Version[0]]
 
 --app:lib
---gc:arc
+if (NimMajor, NimMinor, NimPatch) < (1, 1, 1):
+  --gc:none
+else:
+  --gc:arc
 --passC:"-fvisibility=hidden"
 --define:noSignalHandler
 --path:"nim-syscall/src"
