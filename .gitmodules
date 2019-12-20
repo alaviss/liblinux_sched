@@ -1,0 +1,3 @@
+[submodule "nim-syscall"]
+	path = nim-syscall
+	url = https://github.com/def-/nim-syscall.git
