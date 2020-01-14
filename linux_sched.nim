@@ -10,7 +10,8 @@
 
 import syscall, posix
 
-{.pragma: lib, exportc, codegenDecl: """extern __attribute__((visibility("default"))) $# $#$#""".}
+#{.pragma: lib, exportc, codegenDecl: """extern __attribute__((visibility("default"))) $# $#$#""".}
+{.pragma: lib, exportc, dynlib.}
 
 type
   SchedParam = object

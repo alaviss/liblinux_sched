@@ -11,7 +11,7 @@ if (NimMajor, NimMinor, NimPatch) < (1, 1, 1):
   --gc:none
 else:
   --gc:arc
---passC:"-fvisibility=hidden"
+#--passC:"-fvisibility=hidden"
 --define:noSignalHandler
 --path:"nim-syscall/src"
 
